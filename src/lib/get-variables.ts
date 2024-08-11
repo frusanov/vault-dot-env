@@ -1,6 +1,6 @@
-import get from "lodash/get";
+import get from "lodash/get.js";
 import type { client } from "node-vault";
-import type { VariableDescriptor } from "./get-variables-descriptors";
+import type { VariableDescriptor } from "./get-variables-descriptors.js";
 
 export async function getVariables(
   vault: client,

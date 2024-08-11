@@ -1,6 +1,6 @@
 import { writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import { createDirIfNotExists } from "./create-dir-if-not-exists";
+import { createDirIfNotExists } from "./create-dir-if-not-exists.js";
 
 export async function writeDotEnv(
   variables: Record<string, string>,

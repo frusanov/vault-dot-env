@@ -1,0 +1,14 @@
+version: "2"
+services:
+  vault:
+    container_name: vault
+    image: hashicorp/vault
+    volumes:
+      - $PWD/logs/:/tmp/logs
+    environment:
+      VAULT_LOCAL_CONFIG: '{"storage": {"file": {"path": "/vault/file"}}, "listener": [{"tcp": { "address": "0.0.0.0:8200", "tls_disable": true}}], "default_lease_ttl": "168h", "max_lease_ttl": "720h", "ui": true}'
+    cap_add:
+      - IPC_LOCK
+    command: server
+    ports:
+      - "8200:8200"

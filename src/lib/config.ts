@@ -1,4 +1,4 @@
-import { env } from "./env";
+import { env } from "./env.js";
 
 export const config = {
   vaultAddress: await env("VAULT_ADDRESS", "http://vault:8200"),

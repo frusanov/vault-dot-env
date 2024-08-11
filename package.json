@@ -1,15 +1,13 @@
 {
   "name": "vault-dot-env",
-  "module": "index.ts",
+  "module": "dist/index.js",
   "version": "0.1.0",
   "type": "module",
   "devDependencies": {
-    "@types/bun": "latest",
     "@types/debug": "^4.1.12",
-    "@types/lodash": "^4.17.7"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
+    "@types/lodash": "^4.17.7",
+    "@types/node": "^22.2.0",
+    "typescript": "^5.5.4"
   },
   "dependencies": {
     "debug": "^4.3.6",
@@ -17,7 +15,9 @@
     "node-vault": "^0.10.2"
   },
   "scripts": {
+    "build": "tsc",
     "start": "bun run index.ts",
-    "container:build": "docker build -t vault-dot-env ."
+    "container:build": "docker build -t vault-dot-env .",
+    "compose:dev": "docker compose -f compose.dev.yaml"
   }
 }
